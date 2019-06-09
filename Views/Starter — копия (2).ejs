@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" />
+    <title>Сайт компании NewIT "Новые информационные технологии"</title>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+<script src="javascripts/angular.js"></script>
+<script src="javascripts/modernizr-2.6.2.js"></script>
+<!-- <script src="javascripts/jquery-1.10.2.js"></script> -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="javascripts/bootstrap.js"></script> 
+<script src="javascripts/angular-route.min.js"></script>
+<script src="javascripts/angular-ui-router.js"></script>
+<script src="javascripts/angular-resource.js"></script>
+<script src="javascripts/poisk.js"></script>   
+<script src="modules/mainApp.js"></script>
+<script src="Controllers/AuthController.js"></script>  
+<script src="javascripts/sendform.js"></script>
+</head>
+<body>
+
+	<!-- Подключаем плагин Backstretch -->
+<script src="javascripts/jquery.backstretch.min.js"></script>
+<script>
+    // Устанавливаем изображение, которое будет являться фоном веб-страницы 
+   // $.backstretch("images/background.png");
+</script>
+
+    <div class="navbar navbar-default  ">
+        <div class="container">
+            <div class="navbar-header">
+              <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+			 <!--
+			 <button class="navbar-toggle collapsed" type="button" data-ng-click="toggleCollapsibleMenu()">
+				-->
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+		      </button>   
+                <a class="navbar-brand" href="#/home"><img src="images/logo1.png"></a>
+            </div>
+            
+            <nav class="collapse navbar-collapse navbar-left" id="main-menu" >
+                <ul class="nav navbar-nav">
+				<li><a href="#/home">Главная</a></li>
+                <li><a href="#/about">О нас</a></li>
+					 <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Интернет<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#/vstavka" ng-show="authenticated">Заявка на подключение</a></li>
+	
+            <li><a href="#/tarifs">Тарифы</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Район обслуживания</a></li>
+          </ul>
+        </li>
+		 
+		 <li class="dropdown">
+		 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Дополнительно<span class="caret"></span></a>
+		 <ul class="dropdown-menu" role="menu">
+		 <li><a href="">Монтаж</a></li> 
+		 <li><a href="#/outsourcing">Аутсорсинг</a></li> 
+		 <li><a href="">Разработка ПО</a></li> 
+		 </ul>
+        </li>
+		 
+         <li><a href="#/contact" >Контакты</a></li> 
+		 
+	    <li><p class="navbar-right navbar-text" ng-show="authenticated">
+					  <a href="#/vstavka">Вставить запись</a>
+						 </p></li>
+				</ul>
+	<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Поиск по странице" id="text-to-find" value="">
+        </div>
+        <button type="submit" class="btn btn-default"onclick="javascript: FindOnPage('text-to-find'); return false;">Найти</button>
+    </form>
+	  <ul class="nav navbar-nav navbar-right">
+                    <li><p class="navbar-right navbar-text" ng-show="authenticated">{{current_user}}</p> </li>
+                    <li><p class="navbar-right navbar-text" ng-hide="authenticated">
+                        <a href="#/login"><img>Войти на сайт</a>
+                    </p></li>
+                    <li><p class="navbar-right navbar-text" ng-show="authenticated">
+                        <a href="#" ng-click="signout()">Выход</a>
+                    </p></li>
+                </ul>
+				
+			</nav>
+		</div>	
+    </div>
+    <div class="container body-content">
+        <div ui-view>
+        </div>
+        <hr>	
+<footer>
+<div class="container">
+© ООО "Новые информационные технологии" 2019
+</div>
+</footer>
+ </div>
+</body>
+</html>

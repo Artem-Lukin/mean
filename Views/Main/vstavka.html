@@ -1,0 +1,109 @@
+﻿    <!--<div class="article container"> 
+	 <div class="row">
+	 <div class="col-sm-6 col-md-4 col-md-offset-4">
+	<p><h3>Заявка на подключение</h3>
+    
+	<form action="/save"  method="post" > <br>
+	<label>Фамилия: </label> <input type="text" ng-model="users.surname" name="surname" class="form-control"><br>
+	<label>Имя: </label> <input type="text" ng-model="users.name" name="name" class="form-control"><br>
+    <label>Отчество: </label> <input type="text" ng-model="users.patronymic" name="patronymic" class="form-control"><br>
+    <label>Адрес: </label> <input type="text" ng-model="users.adress" name="adress" class="form-control"><br>
+   <label>Тариф: </label>  <select type="text" ng-model="users.tariff" name="tariff" class="form-control">
+          <option>Комфорт 350+</option>
+          <option>Комфорт 450+</option>
+          <option>Комфорт 500+</option>
+		  <option>Комфорт 600+</option>
+        </select>
+		<br>
+	<label>Телефон: </label> <input type="text" ng-model="users.phone" name="phone" class="form-control"><br>
+	<label>E-mail: </label> <input type="text" ng-model="users.mail" name="mail" class="form-control"><br>
+    <br>
+	<button type="submit" class="btn btn-default" >Отправить</button>
+   	</form>
+	
+		
+ <div> 
+ <div> 
+ <div>-->
+
+		<div class="article container">
+				<h4 class="h4 page-header">Заявка на подключение</h4>
+				<b>Оставьте заявку на подключение, и мы обязательно свяжемся с Вами</b>
+		<div class="row">   
+		<div class="col-sm-6">
+			<!-- FORM ============ -->
+		  
+			<form name="userForm" action="/save"  method="post" class="myForm" novalidate>
+		
+				<!-- SURNAME -->
+				<div class="form-group" ng-class="{ 'has-error' : userForm.surname.$invalid && !userForm.surname.$pristine }">
+					<label>Фамилия*</label>
+					<input type="text" name="surname" class="form-control" ng-model="users.surname"  ng-minlength="3" required>
+					<p ng-show="userForm.surname.$error.minlength" class="help-block">Строка слишком короткая</p>
+					<p ng-show="userForm.surname.$invalid && !userForm.surname.$pristine" class="help-block">Фамилия обязательна</p>
+				</div>
+			  
+				<!-- NAME -->
+				<div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+					<label>Имя*</label>
+					<input type="text" name="name" class="form-control" ng-model="users.name" ng-minlength="3" required>
+					<p ng-show="userForm.name.$error.minlength" class="help-block">Строка слишком короткая</p>
+					<p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Имя обязательно</p>
+				</div>
+	  
+			   <!-- PATRONYMIC -->
+			   <div class="form-group" ng-class="{ 'has-error' : userForm.patronymic.$invalid && !userForm.patronymic.$pristine }">
+				   <label>Отчество*</label>
+				   <input type="text" name="patronymic" class="form-control" ng-model="users.patronymic" ng-minlength="3" required>
+				   <p ng-show="userForm.patronymic.$error.minlength" class="help-block">Строка слишком короткая</p>
+				   <p ng-show="userForm.patronymic.$invalid && !userForm.patronymic.$pristine" class="help-block">Отчество обязательно</p>
+			   </div>
+	  
+			   <!-- ADDRESS -->
+			   <div class="form-group" ng-class="{ 'has-error' : userForm.adress.$invalid && !userForm.adress.$pristine }">
+				<label>Адрес</label>
+				<input type="text" name="adress" class="form-control" ng-model="users.adress">
+				<p ng-show="userForm.adress.$invalid && !userForm.adress.$pristine" class="help-block">You adress is required.</p>
+			</div>
+	  
+				<!--TARIFF-->
+				<div ng-controller="tarifController" class="form-group" ng-class="{ 'has-error' : userForm.adress.$invalid && !userForm.adress.$pristine }">
+				  <label>Тариф</label>
+				  <!--<select type="text" ng-model="users.tariff" name="tariff" class="form-control">
+					<option ></option>
+					<option ng-repeat="item in tarifs">{{item.name}}</option>
+				 </select> -->
+				 <select type="text" name="tariff" class="form-control">
+					<option ></option>
+					<option ng-repeat="item in tarifs">{{item.name}}</option>
+				 </select>
+			  </div>
+		
+					 <!-- PHONE -->
+		   <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+			<label>Телефон*</label>
+			<input type="number" name="phone" class="form-control" ng-model="users.phone"  required>
+			<p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" class="help-block">Телефон обязательно</p>
+		</div>
+		<style>
+			input[type='number'] {
+					-moz-appearance:textfield;
+			}
+			input::-webkit-outer-spin-button,
+			input::-webkit-inner-spin-button {
+					-webkit-appearance: none;
+			}
+			</style>
+				<!-- EMAIL -->
+				<div class="form-group" ng-class="{ 'has-error' : userForm.mail.$invalid && !userForm.mail.$pristine }">
+					<label>Email</label>
+					<input type="email" name="mail" class="form-control" ng-model="users.mail">
+					<p ng-show="userForm.mail.$invalid && !userForm.mail.$pristine" class="help-block">Введите корректный Email</p>
+				</div>
+				
+				<button type="submit" class="btn btn-info" ng-disabled="userForm.$invalid">Отправить</button>
+			</form><br>
+		  </div>
+		  
+		</div>
+	</div>

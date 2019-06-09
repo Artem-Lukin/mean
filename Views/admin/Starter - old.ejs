@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Panel</title>
+    <link href="../stylesheets/bootstrap.css" rel="stylesheet">
+<script src="../javascripts/angular.js"></script>
+<script src="../javascripts/modernizr-2.6.2.js"></script>
+    <script src="../javascripts/jquery-1.10.2.js"></script>
+   <script src="../javascripts/bootstrap.js"></script>
+    <script src="../javascripts/angular-route.min.js"></script>
+    <script src="../javascripts/angular-ui-router.js"></script>
+    <script src="../javascripts/angular-resource.js"></script>
+    <script src="../modules/mainApp.js"></script>
+    <script src="javascripts/super_script.js"></script>
+  <!--
+    <script src="/Controllers/AuthController.js"></script>
+    <script src="controllers/MainController.js"></script>
+    -->
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                
+                <a class="navbar-brand" href="/" >Раздел администратора</a>
+            </div>
+            
+            <div class="navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                   
+                    <li><a href="#/vivod">Заявки</a></li>
+                    
+                </ul>
+			</div>
+		</div>	
+    </div>
+    <div class="container body-content">
+        <div ui-view>
+        </div>
+      <!-- <hr />
+        <footer class="jumbotron">
+            <p>Подвал сайта </p>
+        </footer> --> 
+   </div>
+</body>
+</html>

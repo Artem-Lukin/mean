@@ -1,0 +1,74 @@
+﻿<div class="article container">
+    <h4 class="h4 page-header">Тарифы</h4>
+    <div class="table-responsive" ng-controller="tarifController"> 
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Наименование</th>
+      <th>Скорость, Мбит/с</th>
+      <th>Стоимость, руб/мес</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in tarifs">
+      <td>{{item.name}}</td>
+      <td>{{item.speed}}</td>
+      <td>{{item.price}}</td>
+    </tr>
+  <!--<tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Комфорт 350+</td>
+      <td>30</td>
+      <td>350</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Комфорт 450+</td>
+      <td>50</td>
+      <td>450</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Комфорт 500+</td>
+	   <td>80</td>
+      <td>500</td>
+    </tr>
+	 <tr>
+      <th scope="row">4</th>
+      <td>Комфорт 600+</td>
+	   <td>100</td>
+      <td>600</td>
+    </tr>
+  </tbody>-->
+</table>
+</div>
+
+<h5>Стоимость подключения к сети</h5>
+<table class="table table-hover table-condensed">
+<tr>
+  <td>Подключение к сети</td>	
+  <td>бесплатно</td>
+</tr>
+<tr>
+<td>Повторное подключение к сети</td>
+<td>бесплатно</td>
+</tr>
+<tr>
+<td>Локальный (внутрисетевой) трафик</td>
+<td>бесплатно</td>
+</tr>
+</table>
+<h5>Предоставление статического IP-адреса</h5>
+<table class="table table-hover table-condensed">
+<tr>
+<td>Стоимость	</td>
+<td>30 руб.</td>
+</tr>
+<tr>
+<td>Период</td>
+<td>30 дн.</td>
+</tr>
+</table>
+<p>Также Вам будет доступно в локальной сети более 10 файловых серверов, 24 радиостанции, irc-чат, сайт, форум, фотогаллерея и др.</p>
+</div>

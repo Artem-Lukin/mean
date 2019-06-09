@@ -1,0 +1,15 @@
+﻿    <p><h2>Редактирование документа из БД:</h2>
+  
+	<form  action="/redaktor" method='POST'>
+	
+    	<label>Введите Name редактируемого смартфона: </label> 
+    	<input type="text" ng-model="us.name1" name="name1" class="form-control">
+    <br><p><h2>Вводим новые данные:</h2>    
+    <br><label>Name смартфона: </label> <input type="text" ng-model="users.name" name="name" class="form-control">
+    <br><label>Цена смартфона: </label> <input type="text" ng-model="users.price" name="price" class="form-control">
+    <br><label>Фирма-изготовитель: </label> <input type="text" ng-model="users.company" name="company" class="form-control">
+    <br><label>Год выпуска: </label> <input type="text" ng-model="users.year" name="year" class="form-control">
+<br>
+       	<button type="submit" class="btn btn-small btn-primary" >Загрузить</button>
+   	</form>
+</p>

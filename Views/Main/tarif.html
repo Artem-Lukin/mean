@@ -1,0 +1,28 @@
+    <div id="claims">
+    <h2>Список пользователей</h2>
+    <form id="claimForm" name="tarifForm">
+        <input type="hidden" name="id" value="0" />
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input class="form-control" name="name" />
+        </div>
+        <div class="form-group">
+            <label for="price">Sped:</label>
+            <input class="form-control" name="speed" />
+        </div>
+		<div class="form-group">
+            <label for="price">price:</label>
+            <input class="form-control" name="price" />
+        </div>
+		
+        <div class="panel-body">
+            <button type="submit" class="btn btn-sm btn-primary">Сохранить</button>
+            <a id="reset" class="btn btn-sm btn-primary">Сбросить</a>
+        </div>
+    </form>
+    <table class="table table-condensed table-striped table-bordered">
+        <thead><tr><th>Name</th><th>Speed</th><th>Price</th></thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>

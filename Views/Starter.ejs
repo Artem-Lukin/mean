@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" />
+    <title>NewIT</title>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="stylesheets/media.css"  rel="stylesheet" media="all and (max-width: 900px)">
+    <link rel="stylesheet" type="text/css" href="stylesheets/jquery.fancybox.min.css">   
+  <!-- <script src="//code.jquery.com/jquery-3.2.1.min.js"></script> -->
+  <script src="javascripts/jquery-1.10.2.js"></script>
+  <script src="javascripts/jquery.fancybox.min.js"></script>
+  <script src="javascripts/angular.js"></script>
+  <script src="javascripts/modernizr-2.6.2.js"></script>
+   <script src="javascripts/jquery-1.10.2.js"></script> 
+  <!--<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>-->
+  <script src="javascripts/bootstrap.js"></script> 
+  <!--<script src="javascripts/angular-route.min.js"></script>-->
+  <script src="javascripts/angular-ui-router.js"></script>
+ <!-- <script src="javascripts/angular-resource.js"></script> -->
+  <script src="javascripts/poisk.js"></script>   
+  <script src="modules/mainApp.js"></script>
+  <script src="Controllers/AuthController.js"></script>  
+  <script src="javascripts/sendform.js"></script>
+  <!--<script src="javascripts/checkAuth.js"></script>-->
+  <!--<script src="javascripts/validationForm.js"></script> -->
+  <script>
+    $(document).ready(function() { 
+      $('.navbar-collapse a').click(function (e) {
+              if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+                  $('.navbar-collapse').collapse('toggle');
+              }
+          });
+  });
+  </script>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-left" href="#"><img id="brand-image" alt="WebSiteLogo" src="/images/logo1.png "></a>
+      </div>
+  
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#/home">Главная <span class="sr-only">(current)</span></a></li>
+          <li><a href="#/about">О нас</a></li>
+          <li><a href="#/contact">Контакты</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Интернет <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a  href="#/vstavka">Заявка на подключение</a></li>
+              <li><a href="#/tarifs">Тарифы</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Поиск" id="text-to-find" value="">
+          </div>
+          <submit class="glyphicon glyphicon-search" onclick="javascript: FindOnPage('text-to-find'); return false;"></submit> 
+        </form>
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
+         <li><p class="navbar-right navbar-text" ng-show="authenticated" style="margin-right: 5px;">{{current_user}}</p> </li>
+                    <li><p class="navbar-right navbar-text" ng-hide="authenticated">
+                        <a href="#/login" class="btn btn-primary btn-xs">Войти на сайт</a>
+                    </p></li>
+                    <li><p class="navbar-right navbar-text" ng-show="authenticated">
+                        <a href="#" class="btn btn-primary btn-xs" ng-click="signout()">Выход</a>
+                    </p></li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="container body-content">
+        <div ui-view></div>	
+ </div>
+ <footer class="footer">
+    <div class="container">
+        <a href="https://vk.com/newitlan"><img align="right" src="images/vk_icon.png" style="padding-top: 10px;"></a>
+      <p class="text-muted">Оригинальный источник: <a href="http://newit-lan.ru/">http://newit-lan.ru/ </a></p>
+  </footer>
+  
+
+</body>
+</html>

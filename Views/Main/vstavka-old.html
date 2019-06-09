@@ -1,0 +1,64 @@
+﻿    <!--<div class="article container"> 
+	 <div class="row">
+	 <div class="col-sm-6 col-md-4 col-md-offset-4">
+	<p><h3>Заявка на подключение</h3>
+    
+	<form action="/save"  method="post" > <br>
+	<label>Фамилия: </label> <input type="text" ng-model="users.surname" name="surname" class="form-control"><br>
+	<label>Имя: </label> <input type="text" ng-model="users.name" name="name" class="form-control"><br>
+    <label>Отчество: </label> <input type="text" ng-model="users.patronymic" name="patronymic" class="form-control"><br>
+    <label>Адрес: </label> <input type="text" ng-model="users.adress" name="adress" class="form-control"><br>
+   <label>Тариф: </label>  <select type="text" ng-model="users.tariff" name="tariff" class="form-control">
+          <option>Комфорт 350+</option>
+          <option>Комфорт 450+</option>
+          <option>Комфорт 500+</option>
+		  <option>Комфорт 600+</option>
+        </select>
+		<br>
+	<label>Телефон: </label> <input type="text" ng-model="users.phone" name="phone" class="form-control"><br>
+	<label>E-mail: </label> <input type="text" ng-model="users.mail" name="mail" class="form-control"><br>
+    <br>
+	<button type="submit" class="btn btn-default" >Отправить</button>
+   	</form>
+	
+		
+ <div> 
+ <div> 
+ <div>-->
+
+<div class="article container"> 
+	<div class="row">
+		<div class="col-sm-6 col-md-4 col-md-offset-4">
+				<h4 class="h4 page-header">Заявка на подключение</h4>
+				<p>* - обязательно для заполнения</p>
+			<form action="/save"  method="post" class="myForm"><br>
+				<label>*Фамилия: </label> 
+				<input type="text" ng-model="users.surname" name="surname" class="form-control" required><br>
+
+				<label>*Имя: </label> 
+				<input type="text" ng-model="users.name" name="name" class="form-control" required><br>
+
+				<label>*Отчество: </label> 
+				<input type="text" ng-model="users.patronymic" name="patronymic" class="form-control" required><br>
+
+				<label>*Адрес: </label> 
+				<input type="text" ng-model="users.adress" name="adress" class="form-control" required><br>
+
+				 <label>Тариф: </label>  <select type="text" ng-model="users.tariff" name="tariff" class="form-control">
+          <option>Комфорт 350+</option>
+          <option>Комфорт 450+</option>
+          <option>Комфорт 500+</option>
+		  <option>Комфорт 600+</option>
+			</select><br>
+			
+				<label>*Телефон: </label> 
+				<input type="text" ng-model="users.phone" name="phone" class="form-control" required><br>
+
+				<label>E-mail: </label> 
+				<input type="text" ng-model="users.mail" name="mail" class="form-control"><br>
+			
+				<center><button type="submit" class="btn btn-default" >Отправить</button></center>
+			</form>
+		</div>
+	</div>
+</div>

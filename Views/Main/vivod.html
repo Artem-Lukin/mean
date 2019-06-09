@@ -1,0 +1,126 @@
+<div class="article container" style="padding-top: 50px;">
+   <div id="claims">
+            <h4 class="h4 page-header">Список заявок</h4>
+            <form class="container" id="claimForm" name="claimForm">
+                    <input type="hidden" name="id" value="0" />
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="name">Фамилия:</label>
+                    </div>   
+                    <div class="col-md-4">
+                        <input class="form-control" name="surname" />
+                    </div>
+                    <div class="col-md-2">
+                        <label for="price">Тариф:</label>
+                    </div>
+                    <div  ng-controller="tarifController" class="col-md-4">
+                            <select type="text" ng-model="users.tariff" name="tariff" class="form-control">
+                                    <option></option>
+                                    <option ng-repeat="item in tarifs">{{item.name}}</option>
+                                 </select>
+                        <!--<input class="form-control" name="tariff" />-->
+                    </div>
+                 </div>
+                 <div class="row">
+                        <div class="col-md-2">
+                            <label for="price">Имя:</label>
+                        </div>   
+                        <div class="col-md-4">
+                            <input class="form-control" name="name" />
+                        </div>
+                        <div class="col-md-2">
+                            <label for="price">Телефон:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" name="phone" />
+                        </div>
+                     </div>
+                <div class="row">
+                         <div class="col-md-2">
+                                <label for="price">Отчество:</label>
+                        </div>   
+                         <div class="col-md-4">
+                                <input class="form-control" name="patronymic" />
+                         </div>
+                         <div class="col-md-2">
+                                <label for="price">Email:</label>
+                        </div>
+                         <div class="col-md-4">
+                                <input class="form-control" name="mail" />
+                         </div>
+                 </div>
+
+                 <div class="row">
+                        <div class="col-md-2">
+                            <label for="price">Адрес:</label>
+                        </div>   
+                        <div class="col-md-4">
+                            <input class="form-control" name="adress" />
+                        </div>
+                     </div>
+            
+                    <div class="panel-body" align="right">
+                        <button type="submit" class="btn btn-sm btn-success">Сохранить</button>
+                        <a id="reset" class="btn btn-sm btn-primary">Сбросить</a>
+                    </div>
+                </form>
+<!--
+    <form id="claimForm" name="claimForm">
+        <input type="hidden" name="id" value="0" />
+        <div class="form-group">
+            <label for="name">Surname:</label>
+            <input class="form-control" name="surname" />
+        </div>
+        <div class="form-group">
+            <label for="price">Name:</label>
+            <input class="form-control" name="name" />
+        </div>
+
+        <div class="form-group">
+                <label for="price">Patronymic:</label>
+                <input class="form-control" name="patronymic" />
+            </div>
+		<div class="form-group">
+            <label for="price">Adress:</label>
+            <input class="form-control" name="adress" />
+        </div>
+
+        <div class="form-group">
+            <label for="price">Tariff:</label>
+            <input class="form-control" name="tariff" />
+        </div>
+        <div class="form-group">
+            <label for="price">Phone:</label>
+            <input class="form-control" name="phone" />
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="price">Email:</label>
+            <input class="form-control" name="mail" />
+        </div>
+        <div class="panel-body">
+            <button type="submit" class="btn btn-sm btn-primary">Сохранить</button>
+            <a id="reset" class="btn btn-sm btn-primary">Сбросить</a>
+        </div>
+    </form>
+-->
+
+    <table class="table table-condensed table-striped table-bordered">
+        <thead >
+		<tr>
+			<th>Фамилия</th>
+			<th>Имя</th>
+			<th>Отчество</th>
+			<th>Адрес</th>
+			<th>Тариф</th>
+			<th>Телефон</th>
+			<th>Email</th>
+			<th></th>
+		</tr>
+		</thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+</div>
