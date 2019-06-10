@@ -188,3 +188,8 @@ text-align: center;
     width:100%;
     position:absolute;
 }
+
+.text-warning {
+    color: #ff0000;
+    text-align: center;
+}

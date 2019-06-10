@@ -7,7 +7,10 @@ module.exports = function(passport){
     });
 // Отправляем состояние неудавшегося входа в систему обратно в представление (angular)
     router.get('/failure',function(req,res){
-res.send({state: 'failure',user:null,message:"Неверный логин или пароль"});
+        res.send({state: 'failure',user:null,message:"Неверный логин или пароль"});
+    });
+    router.get('/failure1',function(req,res){
+        res.send({state: 'failure',user:null,message:"Пользователь уже существует"});
     });
     // Запрос входа в систему
 router.post('/login',passport.authenticate('login',{
@@ -17,7 +20,7 @@ router.post('/login',passport.authenticate('login',{
 // Запрос на регистрацию в системе
     router.post('/signup', passport.authenticate('signup', {
         successRedirect: '/auth/success',
-        failureRedirect: '/auth/failure'
+        failureRedirect: '/auth/failure1'
     }));
 // Запрос на выход из системы
     router.get('/signout', function(req, res) {

@@ -1,16 +1,16 @@
 ﻿<div class="article container">
     <h4 class="h4 page-header">Тарифы</h4>
     <div class="table-responsive" ng-controller="tarifController"> 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered">
   <thead>
-    <tr>
+    <tr  class="bg-primary">
       <th>Наименование</th>
       <th>Скорость, Мбит/с</th>
       <th>Стоимость, руб/мес</th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="item in tarifs">
+    <tr ng-repeat="item in tarifs" class="bg-info">
       <td>{{item.name}}</td>
       <td>{{item.speed}}</td>
       <td>{{item.price}}</td>

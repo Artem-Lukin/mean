@@ -38,32 +38,28 @@
 				<!-- SURNAME -->
 				<div class="form-group" ng-class="{ 'has-error' : userForm.surname.$invalid && !userForm.surname.$pristine }">
 					<label>Фамилия*</label>
-					<input type="text" name="surname" class="form-control" ng-model="users.surname"  ng-minlength="3" required>
-					<p ng-show="userForm.surname.$error.minlength" class="help-block">Строка слишком короткая</p>
-					<p ng-show="userForm.surname.$invalid && !userForm.surname.$pristine" class="help-block">Фамилия обязательна</p>
+					<input type="text" name="surname" class="form-control" ng-model="users.surname"  required>
+					<p ng-show="userForm.surname.$invalid && !userForm.surname.$pristine" class="help-block">Поле обязательно</p>
 				</div>
 			  
 				<!-- NAME -->
 				<div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
 					<label>Имя*</label>
-					<input type="text" name="name" class="form-control" ng-model="users.name" ng-minlength="3" required>
-					<p ng-show="userForm.name.$error.minlength" class="help-block">Строка слишком короткая</p>
-					<p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Имя обязательно</p>
+					<input type="text" name="name" class="form-control" ng-model="users.name" required>
+					<p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Поле обязательно</p>
 				</div>
 	  
 			   <!-- PATRONYMIC -->
 			   <div class="form-group" ng-class="{ 'has-error' : userForm.patronymic.$invalid && !userForm.patronymic.$pristine }">
 				   <label>Отчество*</label>
-				   <input type="text" name="patronymic" class="form-control" ng-model="users.patronymic" ng-minlength="3" required>
-				   <p ng-show="userForm.patronymic.$error.minlength" class="help-block">Строка слишком короткая</p>
-				   <p ng-show="userForm.patronymic.$invalid && !userForm.patronymic.$pristine" class="help-block">Отчество обязательно</p>
+				   <input type="text" name="patronymic" class="form-control" ng-model="users.patronymic" required>
+				   <p ng-show="userForm.patronymic.$invalid && !userForm.patronymic.$pristine" class="help-block">Поле обязательно</p>
 			   </div>
 	  
 			   <!-- ADDRESS -->
 			   <div class="form-group" ng-class="{ 'has-error' : userForm.adress.$invalid && !userForm.adress.$pristine }">
 				<label>Адрес</label>
 				<input type="text" name="adress" class="form-control" ng-model="users.adress">
-				<p ng-show="userForm.adress.$invalid && !userForm.adress.$pristine" class="help-block">You adress is required.</p>
 			</div>
 	  
 				<!--TARIFF-->
@@ -82,10 +78,10 @@
 					 <!-- PHONE -->
 		   <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
 			<label>Телефон*</label>
-			<input type="number" name="phone" class="form-control" ng-model="users.phone"  required>
-			<p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" class="help-block">Телефон обязательно</p>
+			<input id="phone" type="number" name="phone" class="form-control" ng-model="users.phone" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+			<p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" class="help-block">Поле обязательно</p>
 		</div>
-		<style>
+		<!----><style>
 			input[type='number'] {
 					-moz-appearance:textfield;
 			}
